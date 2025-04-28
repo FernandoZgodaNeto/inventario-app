@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Produtos from './pages/Produtos';
 import Clientes from './pages/Clientes';
 import Fornecedores from './pages/Fornecedores';
@@ -11,6 +11,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Navigate to="/produtos" replace />} />
         <Route path="/produtos" element={<Layout><Produtos /></Layout>} />
         <Route path="/clientes" element={<Layout><Clientes /></Layout>} />
         <Route path="/fornecedores" element={<Layout><Fornecedores /></Layout>} />
